@@ -1,0 +1,85 @@
+
+
+.modal-messages {
+    display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+
+  
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  
+  
+}
+
+.modal-myprofile {
+    display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+
+  z-index: 5; /* Sit on top */ 
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+.modal-messages-content, .modal-myprofile-content {
+    background-color: white;
+  border: black solid 1px;
+  overflow-y: scroll;
+  position: fixed;
+  top: 55px;
+  left: 65vw;
+    width: 30%;
+    height: 30%;
+    z-index: 50;
+}
+
+.modal-myprofile-content {
+    background-color: white;
+    border: black solid 1px;
+    position: fixed;
+    top: 55px;
+    left: 75vw;
+      width: 20%;
+      height: 40%;
+}
+
+.city, .university {
+  margin-right: 20px;
+  font-size: var(--font-form-element-font-size, 16px) !important;
+  line-height: var(--font-form-element-line-height, 24px) !important;
+  letter-spacing: var(--font-form-element-letter-spacing, normal) !important;
+  font-family: var(--font-form-element-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+  text-transform: var(--font-form-element-text-transform, undefined) !important;
+  color: #484848 !important;
+  background-color: #ffffff;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgb(235, 235, 235) !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+}
+
+.city-university {
+  width: 350px;
+  flex-direction: column;
+  display:flex;
+}
+
+.messages-small-inbox {
+  overflow: scroll;
+  height: 100%;
+}
+
+#msg-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#msg-button div {
+  margin: 0 2px;
+}

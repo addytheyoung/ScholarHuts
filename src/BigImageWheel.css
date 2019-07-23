@@ -1,0 +1,24 @@
+
+
+
+
+.big-wheel-div {
+    width: 65vw;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-arrow {
+    width: 70px;
+}
+
+.big-arrow-right {
+left: 83vw;
+top: 10vh;
+}
+
+.big-arrow-left {
+    top: 10vh;
+left: 10vw;
+}

@@ -1,0 +1,128 @@
+.div-logo {
+    width: 82px;
+    height: 80px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.logo-img {
+        width: 100px;
+        height: 100px;
+  }
+
+.header-banner {
+    display: flex;
+}
+
+.div-step {
+    display: flex;
+    
+  align-items: center;
+  justify-content: center;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.444444em;
+  margin: 20px 0;
+}
+
+.line-thing {
+    height: 10px;
+    line-height: 0.8px;
+    background-color: #edefed;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05)
+}
+
+.colored-line-thing {
+    display: inline-block;
+    z-index: 1;
+    width: 3%;
+    height: 10px;
+    background-color: #008489;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border: 0px;
+    position: absolute;
+}
+
+.body-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+.section select, #start-date, #end-date, #image_uploads, #name-id, #charge-id, #address-id {
+    width: 30vw;
+    height: 50px;
+    margin-left: 35vw;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: var(--font-form-element-font-size, 16px) !important;
+    line-height: var(--font-form-element-line-height, 24px) !important;
+    letter-spacing: var(--font-form-element-letter-spacing, normal) !important;
+    font-family: var(--font-form-element-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
+    text-transform: var(--font-form-element-text-transform, undefined) !important;
+    color: #484848 !important;
+    background-color: #ffffff;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(235, 235, 235) !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+}
+
+#submit-button:hover {
+    font-weight: bold;
+}
+
+.section select option {
+   font-weight: normal;
+   min-height: 1.2em;
+   display: block;
+   
+}
+.form-submit-div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+#submit-button {
+    width: 20vw;
+    height: 50px;
+   
+    
+}
+
+.section p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#image_uploads {
+    background: transparent;
+}
+
+.checkbox-input {
+    height: 20px;
+    width: 20px;
+    margin-left: 0px;
+    margin-left: 10px;
+}
