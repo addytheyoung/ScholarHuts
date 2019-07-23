@@ -9,6 +9,7 @@ export class MapContainer extends React.Component {
     super(props);
 
     this.state = {
+      map: null,
       called: false
     };
   }
@@ -18,12 +19,14 @@ export class MapContainer extends React.Component {
 
     return (
       <Map
+        id="12345678"
         google={this.props.google}
         zoom={13}
         initialCenter={{
           lat: 30.2849,
           lng: -97.7341
         }}
+        onMouseover={this.mapshit}
       >
         {this.props.stateS.map(entry => (
           <Marker
@@ -41,18 +44,10 @@ export class MapContainer extends React.Component {
             }
             onMouseover={this.onMouseoverMarker}
             onMouseout={this.onMouseoutMarker}
-            true={this.fetchPlaces}
           />
         ))}
       </Map>
     );
-  }
-
-  fetchPlaces(props, marker, event) {
-    alert("fetch");
-    console.log(props);
-    console.log(marker);
-    // a.children[0].props.setIcon({ url: meme, scaledSize: new window.google.maps.Size(44, 56) });
   }
 
   onMouseoverMarker = (props, marker, e) => {
