@@ -177,7 +177,23 @@ export default class Board extends React.Component {
   }
 
   functionFromBoardToApartments = dataFromChild => {
-    console.log(dataFromChild);
+    // console.log(dataFromChild);
+    const uniqueId = dataFromChild.uniqueId;
+    // console.log(uniqueId);
+    //   console.log(this.state.latLng);
+    this.state.latLng.forEach((entry, index) => {
+      if (entry.id === uniqueId) {
+        console.log(entry);
+        console.log(index);
+        entry.magnify = true;
+        this.state.latLng[index] = entry;
+        this.setState({ latLng: this.state.latLng });
+        console.log(this.state.latLng);
+        return;
+      }
+    });
+    // console.log(this.state.latLng);
+    // return;
   };
 
   componentWillReceiveProps(newProps) {
@@ -420,7 +436,7 @@ export default class Board extends React.Component {
       }
 
       //const WrappedMap = withScriptjs(withGoogleMap(this.Map));
-
+      console.log(this.state.latLng);
       return (
         <Router>
           <Route

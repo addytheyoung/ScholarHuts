@@ -28,24 +28,46 @@ export class MapContainer extends React.Component {
         }}
         onMouseover={this.mapshit}
       >
-        {this.props.stateS.map(entry => (
-          <Marker
-            key={entry.id}
-            position={{
-              lat: entry.lat,
-              lng: entry.lng
-            }}
-            icon={{
-              url: meme,
-              scaledSize: new this.props.google.maps.Size(28, 40)
-            }}
-            onClick={event =>
-              window.open("https://scholarhuts.com/post/" + entry.id, "_blank")
-            }
-            onMouseover={this.onMouseoverMarker}
-            onMouseout={this.onMouseoutMarker}
-          />
-        ))}
+        {this.props.stateS.map(
+          entry =>
+            entry.magnify && (
+              <Marker
+                key={entry.id}
+                position={{
+                  lat: entry.lat,
+                  lng: entry.lng
+                }}
+                icon={{
+                  url: meme,
+                  scaledSize: new this.props.google.maps.Size(100, 100)
+                }}
+                onClick={event =>
+                  window.open(
+                    "https://scholarhuts.com/post/" + entry.id,
+                    "_blank"
+                  )
+                }
+                onMouseover={this.onMouseoverMarker}
+                onMouseout={this.onMouseoutMarker}
+              />
+            )
+            // <Marker
+            //   key={entry.id}
+            //   position={{
+            //     lat: entry.lat,
+            //     lng: entry.lng
+            //   }}
+            //   icon={{
+            //     url: meme,
+            //     scaledSize: new this.props.google.maps.Size(28, 40)
+            //   }}
+            //   onClick={event =>
+            //     window.open("https://scholarhuts.com/post/" + entry.id, "_blank")
+            //   }
+            //   onMouseover={this.onMouseoverMarker}
+            //   onMouseout={this.onMouseoutMarker}
+            // />
+        )}
       </Map>
     );
   }
