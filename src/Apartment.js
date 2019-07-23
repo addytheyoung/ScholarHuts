@@ -117,7 +117,7 @@ export default class Apartment extends React.Component {
         <Router>
           <div
             className="box"
-            onMouseEnter={() => this.hoverShit(box.uid)}
+            onMouseEnter={() => this.hoverShit(box)}
             id={box.uid}
           >
             <div className="box-link">
