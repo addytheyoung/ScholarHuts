@@ -1,8 +1,9 @@
 import React from "react";
 import { Map, Marker, GoogleApiWrapper, InfoWindow } from "google-maps-react";
-import facebooklogo from "./facebooklogo.png";
+import facebooklogo from "./orangemarker.svg";
 import "./App.css";
 import meme from "./spotlight-poi2_hdpi.png";
+import meme2 from "./isthisreallyit.svg";
 
 export class MapContainer extends React.Component {
   constructor(props) {
@@ -27,6 +28,8 @@ export class MapContainer extends React.Component {
           lng: -97.7341
         }}
         onMouseover={this.mapshit}
+        streetViewControl={false}
+        mapTypeControl={false}
       >
         {this.props.stateS.map(
           entry => {
@@ -39,8 +42,8 @@ export class MapContainer extends React.Component {
                     lng: entry.lng
                   }}
                   icon={{
-                    url: meme,
-                    scaledSize: new this.props.google.maps.Size(40, 60)
+                    url: facebooklogo,
+                    scaledSize: new this.props.google.maps.Size(40, 40)
                   }}
                   onClick={event =>
                     window.open(
@@ -50,6 +53,15 @@ export class MapContainer extends React.Component {
                   }
                   onMouseover={this.onMouseoverMarker}
                   onMouseout={this.onMouseoutMarker}
+                  label={{
+                    text: entry.price,
+                    fontWeight: "500",
+                    fontFamily:
+                      "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
+
+                    color: "white"
+                  }}
+                  zIndex={200}
                 />
               );
             } else {
@@ -61,8 +73,8 @@ export class MapContainer extends React.Component {
                     lng: entry.lng
                   }}
                   icon={{
-                    url: meme,
-                    scaledSize: new this.props.google.maps.Size(28, 40)
+                    url: meme2,
+                    scaledSize: new this.props.google.maps.Size(40, 40)
                   }}
                   onClick={event =>
                     window.open(
@@ -72,6 +84,15 @@ export class MapContainer extends React.Component {
                   }
                   onMouseover={this.onMouseoverMarker}
                   onMouseout={this.onMouseoutMarker}
+                  label={{
+                    text: entry.price,
+                    fontWeight: "700",
+                    fontFamily:
+                      "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
+
+                    color: "black"
+                  }}
+                  //label={"$" + entry.price.toString()}
                 />
               );
             }
@@ -98,24 +119,39 @@ export class MapContainer extends React.Component {
   }
 
   onMouseoverMarker = (props, marker, e) => {
-    console.log(marker);
-
     if (this.state.called) {
       return null;
     } else {
       marker.setIcon({
-        url: meme,
-        scaledSize: new this.props.google.maps.Size(44, 56)
+        url: facebooklogo,
+        scaledSize: new this.props.google.maps.Size(40, 40)
       });
       this.state.called = true;
+      marker.setLabel({
+        text: marker.label.text,
+        fontWeight: "700",
+        fontFamily:
+          "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
+
+        color: "white"
+      });
     }
   };
 
   onMouseoutMarker = (props, marker, e) => {
+    console.log(marker);
     this.state.called = false;
     marker.setIcon({
-      url: meme,
-      scaledSize: new this.props.google.maps.Size(28, 40)
+      url: meme2,
+      scaledSize: new this.props.google.maps.Size(40, 40)
+    });
+    marker.setLabel({
+      text: marker.label.text,
+      fontWeight: "700",
+      fontFamily:
+        "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
+
+      color: "black"
     });
   };
 }

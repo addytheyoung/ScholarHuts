@@ -35,6 +35,10 @@ export default class Apartment extends React.Component {
     this.props.func(box);
   }
 
+  hoverShit2(box) {
+    this.props.func2(box);
+  }
+
   render() {
     const monthNames = [
       "January",
@@ -118,6 +122,7 @@ export default class Apartment extends React.Component {
           <div
             className="box"
             onMouseEnter={() => this.hoverShit(box)}
+            onMouseLeave={() => this.hoverShit2(box)}
             id={box.uid}
           >
             <div className="box-link">
