@@ -11,7 +11,7 @@ export class MapContainer extends React.Component {
 
     this.state = {
       map: null,
-      called: false
+      called: false,
     };
   }
 
@@ -25,27 +25,27 @@ export class MapContainer extends React.Component {
         zoom={13}
         initialCenter={{
           lat: 30.2849,
-          lng: -97.7341
+          lng: -97.7341,
         }}
         onMouseover={this.mapshit}
         streetViewControl={false}
         mapTypeControl={false}
       >
         {this.props.stateS.map(
-          entry => {
+          (entry) => {
             if (entry.magnify) {
               return (
                 <Marker
                   key={entry.id}
                   position={{
                     lat: entry.lat,
-                    lng: entry.lng
+                    lng: entry.lng,
                   }}
                   icon={{
                     url: facebooklogo,
-                    scaledSize: new this.props.google.maps.Size(40, 40)
+                    scaledSize: new this.props.google.maps.Size(40, 40),
                   }}
-                  onClick={event =>
+                  onClick={(event) =>
                     window.open(
                       "https://scholarhuts.com/post/" + entry.id,
                       "_blank"
@@ -59,7 +59,7 @@ export class MapContainer extends React.Component {
                     fontFamily:
                       "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
 
-                    color: "white"
+                    color: "white",
                   }}
                   zIndex={200}
                 />
@@ -70,13 +70,13 @@ export class MapContainer extends React.Component {
                   key={entry.id}
                   position={{
                     lat: entry.lat,
-                    lng: entry.lng
+                    lng: entry.lng,
                   }}
                   icon={{
                     url: meme2,
-                    scaledSize: new this.props.google.maps.Size(40, 40)
+                    scaledSize: new this.props.google.maps.Size(40, 40),
                   }}
-                  onClick={event =>
+                  onClick={(event) =>
                     window.open(
                       "https://scholarhuts.com/post/" + entry.id,
                       "_blank"
@@ -90,7 +90,7 @@ export class MapContainer extends React.Component {
                     fontFamily:
                       "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
 
-                    color: "black"
+                    color: "black",
                   }}
                   //label={"$" + entry.price.toString()}
                 />
@@ -124,7 +124,7 @@ export class MapContainer extends React.Component {
     } else {
       marker.setIcon({
         url: facebooklogo,
-        scaledSize: new this.props.google.maps.Size(40, 40)
+        scaledSize: new this.props.google.maps.Size(40, 40),
       });
       this.state.called = true;
       marker.setLabel({
@@ -133,7 +133,7 @@ export class MapContainer extends React.Component {
         fontFamily:
           "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
 
-        color: "white"
+        color: "white",
       });
     }
   };
@@ -143,7 +143,7 @@ export class MapContainer extends React.Component {
     this.state.called = false;
     marker.setIcon({
       url: meme2,
-      scaledSize: new this.props.google.maps.Size(40, 40)
+      scaledSize: new this.props.google.maps.Size(40, 40),
     });
     marker.setLabel({
       text: marker.label.text,
@@ -151,11 +151,7 @@ export class MapContainer extends React.Component {
       fontFamily:
         "Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif",
 
-      color: "black"
+      color: "black",
     });
   };
 }
-
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyCmgrSz2oQZHuMYoUoC0hD5VXpMZIyM0Bc"
-})(MapContainer);

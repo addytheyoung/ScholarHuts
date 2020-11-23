@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-143180104-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143180104-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-143180104-1');
-  </script>
-
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmgrSz2oQZHuMYoUoC0hD5VXpMZIyM0Bc&callback=initMap">
+      gtag("config", "UA-143180104-1");
     </script>
-  <script>
-  </script>
-  <meta charset="utf-8" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <script src="/__/firebase/6.0.4/firebase-database.js"></script>
-  <script src="/__/firebase/init.js"></script>
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <title>ScholarHuts: Student Subleasing & Housing Made Simple</title>
-  <style>
+    <script></script>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="/__/firebase/6.0.4/firebase-database.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  </style>
-</head>
+    <title>ScholarHuts: Student Subleasing & Housing Made Simple</title>
+    <style></style>
+  </head>
 
-<body>
-
-
-  <div id="root"></div>
-</body>
-
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
